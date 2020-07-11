@@ -1,4 +1,4 @@
-package com.example.heroes
+package com.gametton.heroes
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
