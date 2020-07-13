@@ -9,14 +9,13 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  void _exibirDetalhes(String hero, String image) {
+    print("Herói:" + hero);
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => HeroDetail(hero, image)));
+  }
 
- void _exibirDetalhes(String hero, String image)
-{
-  print("Herói:" +hero);
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => HeroDetail(hero,image)));
-}
-
+//Comentario para Build
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,8 +24,8 @@ class _HomeState extends State<Home> {
           title: Text("Heroes"),
           backgroundColor: Colors.red,
         ),
-        body: SingleChildScrollView(child: 
-         Column(
+        body: SingleChildScrollView(
+            child: Column(
           children: <Widget>[
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -35,82 +34,96 @@ class _HomeState extends State<Home> {
                 Padding(
                   padding: EdgeInsets.only(top: 20),
                   child: GestureDetector(
-                    onTap: (){_exibirDetalhes("Daredevil","daredevil");},
+                    onTap: () {
+                      _exibirDetalhes("Daredevil", "daredevil");
+                    },
                     child: Image.asset("images/daredevil.jpg", height: 170),
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 20),
                   child: GestureDetector(
-                     onTap: (){_exibirDetalhes("Captain America","america");},
+                    onTap: () {
+                      _exibirDetalhes("Captain America", "america");
+                    },
                     child: Image.asset("images/america.jpg", height: 170),
                   ),
                 ),
               ],
             ),
-                        Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Padding(
                   padding: EdgeInsets.only(top: 20),
                   child: GestureDetector(
-                     onTap: (){_exibirDetalhes("Hulk","hulk");},
+                    onTap: () {
+                      _exibirDetalhes("Hulk", "hulk");
+                    },
                     child: Image.asset("images/hulk.jpg", height: 170),
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 20),
                   child: GestureDetector(
-                     onTap: (){_exibirDetalhes("Iron Man","iron");},
+                    onTap: () {
+                      _exibirDetalhes("Iron Man", "iron");
+                    },
                     child: Image.asset("images/iron.jpg", height: 170),
                   ),
                 ),
               ],
             ),
-                        Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Padding(
                   padding: EdgeInsets.only(top: 20),
                   child: GestureDetector(
-                     onTap: (){_exibirDetalhes("Black Panther","panther");},
+                    onTap: () {
+                      _exibirDetalhes("Black Panther", "panther");
+                    },
                     child: Image.asset("images/panther.jpg", height: 170),
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 20),
                   child: GestureDetector(
-                     onTap: (){_exibirDetalhes("Spider-Man","spider");},
+                    onTap: () {
+                      _exibirDetalhes("Spider-Man", "spider");
+                    },
                     child: Image.asset("images/spider.jpg", height: 170),
                   ),
                 ),
               ],
             ),
-                        Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Padding(
                   padding: EdgeInsets.only(top: 20),
                   child: GestureDetector(
-                     onTap: (){_exibirDetalhes("Thor","thor");},
+                    onTap: () {
+                      _exibirDetalhes("Thor", "thor");
+                    },
                     child: Image.asset("images/thor.jpg", height: 170),
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 20, bottom: 20),
                   child: GestureDetector(
-                     onTap: (){_exibirDetalhes("Wolverine","wolverine");},
+                    onTap: () {
+                      _exibirDetalhes("Wolverine", "wolverine");
+                    },
                     child: Image.asset("images/wolverine.jpg", height: 170),
                   ),
                 ),
               ],
             )
           ],
-        )
-      )
-    );
+        )));
   }
 }
