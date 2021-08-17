@@ -57,7 +57,7 @@ class _HeroDetailState extends State<HeroDetail> {
           case ConnectionState.done:
             print("conexão done");
             if (snapshot.hasError) {
-              resultado = "Erro ao carregar os dados.";
+              resultado = "Erro ao carregar os dados :(";
             } else {
               var ret = snapshot.data["data"]["results"][0]["description"];
               resultado = ret.toString();
@@ -74,13 +74,16 @@ class _HeroDetailState extends State<HeroDetail> {
               padding: EdgeInsets.all(16),
               child: Column(
                 children: <Widget>[
-                  Row(                    
+                  Row(
                     children: <Widget>[
-                      Image.asset("images/${widget.heroImage}.jpg", height: 100,),
+                      Image.asset(
+                        "images/${widget.heroImage}.jpg",
+                        height: 100,
+                      ),
                       Padding(
                         padding: EdgeInsets.only(left: 10),
                         child: Text(
-                          "About ${widget.heroName}",                          
+                          "About ${widget.heroName}",
                           style:
                               TextStyle(fontSize: 20, color: Colors.deepOrange),
                         ),
